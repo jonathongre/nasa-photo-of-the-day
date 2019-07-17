@@ -2,9 +2,9 @@ import React from "react";
 
 const Info = ({ data }) => {
   return (
-    
-        <p>{ data.explanation }</p>
-      
+     <div  className="info">
+      <p>{ data.explanation }</p>
+      </div>
   );
 };
 

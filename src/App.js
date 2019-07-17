@@ -2,9 +2,14 @@ import React, {useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Header from "./components/Header";
+import Picture from "./components/Picture";
+import Card from "./components/Card";
+import Info from "./components/Info";
 
 function App() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
+    console.log(data);
+    const dataKeys = Object.keys(data);
 
   useEffect(() => {
     axios
@@ -19,7 +24,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Header />
+      <Header data={data}/>
+      <Card data={data} />
+      <Info data={data}/>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Picture from "./Picture";
 const Card = ({ data }) => {
   return (
     <div className="card">
-      <Picture url={data.url} />
+      <Picture data={data} />
     </div>
   );
 };

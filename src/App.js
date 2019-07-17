@@ -9,14 +9,11 @@ import Info from "./components/Info";
 
 function App() {
     const [data, setData] = useState({});
-    console.log(data);
-    const dataKeys = Object.keys(data);
 
     useEffect(() => {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=jA1Rwr44llgz4th1eVeqJLfVDIJqa7Waefuhkpjg")
       .then(response => {
-        console.log(response)
         setData(response.data);
       })
       .catch(error => {

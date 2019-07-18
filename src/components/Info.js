@@ -1,10 +1,12 @@
 import React from "react";
+import { InfoDiv } from "./Styled";
 
 const Info = ({ data }) => {
   return (
-     <div  className="info">
-      <p>{ data.explanation }</p>
-      </div>
+      <InfoDiv>
+        <p>{ data.explanation }</p>
+      </InfoDiv>
+      
   );
 };
 

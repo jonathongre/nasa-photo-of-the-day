@@ -1,14 +1,14 @@
 import React from "react";
+import { HeaderDiv } from "./Styled";
 
-const Header = ({ data }) => {
+const HeaderContainer = ({ data }) => {
+     
   return (
-    <div className="App-header">
-      <div className="site-name">
-        <h2>{ data.title }</h2>
+    <HeaderDiv>
+        <h1>{ data.title }</h1>
         <h5>{ data.date }</h5>
-      </div>
-    </div>
+    </HeaderDiv>
   );
 };
 
-export default Header;
+export default HeaderContainer;

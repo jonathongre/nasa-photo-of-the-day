@@ -1,12 +1,14 @@
 import React from "react";
 import Picture from "./Picture";
+import { Card } from "./Styled";
 
-const Card = ({ data }) => {
+const Cards = ({ data }) => {
+
   return (
-    <div className="card">
+    <Card>
       <Picture data={data} />
-    </div>
+    </Card>
   );
 };
 
-export default Card;
+export default Cards;

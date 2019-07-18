@@ -1,15 +1,16 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { PictureDiv } from "./Styled";
 
 const Picture = ({ data }) => {
   return (
-      <div className="picture">
+      <PictureDiv>
             {data.media_type === "video" ? (
         <ReactPlayer url={data.url} />
       ) : (
         <img alt={data.title} src={data.url} />
       )}
-    </div>
+    </PictureDiv>
   );
 };
 

@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import "semantic-ui-css/semantic.min.css";
-//import styled from "styled-components";
+import styled from "styled-components";
 import HeaderContainer from "./components/Header";
-import Cards from "./components/Card";
-import Info from "./components/Info";
-import { Input } from "semantic-ui-react";
-import { Page } from "./components/Styled";
+import CardContainer from "./components/Card";
+import InfoContainer from "./components/Info";
+//import InputContainer from "./components/Input";
+import FooterContainer from "./components/Footer";
+
+const Page = styled.div `
+        background-color: #3f4552;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 1.5em;
+        color: "white;
+        margin-bottom: 50px;
+`;
 
 function App() {
    
@@ -39,17 +50,13 @@ function App() {
 
     return (
     <Page>
-        <HeaderContainer data = { data } />
-            <Input type = "date"
-                icon = "calendar"
-                iconPosition = "left"
-                label = {{ tag: true, content: "Pick a Date" }}
-                labelPosition = "right"
-                max = { data.date }
-                onChange = { e => setNewDate(e.target.value) } /> 
-        <Cards data = { data } /> 
-        <Info data = { data } /> 
-    </Page>
+        <HeaderContainer data = { data } /> 
+            <p>Pick a Date</p>
+            <input type="date" name="date" max={data.date} onChange={e => setNewDate(e.target.value)} />
+        <CardContainer data = { data } /> 
+        <InfoContainer data = { data } />
+        <FooterContainer />
+     </Page>
     );
 }
 

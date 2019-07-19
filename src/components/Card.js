@@ -1,14 +1,22 @@
 import React from "react";
-import Picture from "./Picture";
-import { Card } from "./Styled";
+import PictureDiv from "./Picture";
+import styled from "styled-components";
 
-const Cards = ({ data }) => {
+const Card = styled.div `
+        display: flex;
+        justify-content: center;
+        margin: 30px auto;
+        width: 75%;
+        height: auto;
+`;
+
+const CardContainer = ({ data }) => {
 
   return (
     <Card>
-      <Picture data={data} />
+      <PictureDiv data={data} />
     </Card>
   );
 };
 
-export default Cards;
+export default CardContainer;

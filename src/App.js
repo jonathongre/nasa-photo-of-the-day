@@ -23,11 +23,12 @@ function App() {
    
     const [data, setData] = useState({});
     const [newDate, setNewDate] = useState("");
+    const apiKey = 'jA1Rwr44llgz4th1eVeqJLfVDIJqa7Waefuhkpjg'
 
     useEffect(() => {
         axios
             .get(
-                `https://api.nasa.gov/planetary/apod?api_key=jA1Rwr44llgz4th1eVeqJLfVDIJqa7Waefuhkpjg&date=${newDate}`
+                `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${newDate}`
             )
             .then(response => {
                 setData(response.data);
@@ -39,7 +40,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get("https://api.nasa.gov/planetary/apod?api_key=jA1Rwr44llgz4th1eVeqJLfVDIJqa7Waefuhkpjg")
+            .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
             .then(response => {
                 setData(response.data);
             })
